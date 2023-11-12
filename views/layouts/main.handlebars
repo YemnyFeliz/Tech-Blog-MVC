@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
-    crossorigin="anonymous">
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <title>Tech Blog</title>
 </head>
+
 <body>
+    <nav class="nav nav-pills flex-column flex-sm-row">
+        <a class="flex-sm-fill text-sm-center nav-link active" href="/">HOME</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="/dashboard">Dashboard</a>
+        {{#if loggedIn}}
+        <a class="flex-sm-fill text-sm-center nav-link" href="/login">Logout</a>
+        {{else}}
+        <a class="flex-sm-fill text-sm-center nav-link" href="#">Login</a>
+        {{/if}}
+    </nav>
     <header>
-        <nav class="nav nav-pills flex-column flex-sm-row">
-  <a class="flex-sm-fill text-sm-center nav-link active" href="#">HOME</a>
-  <a class="flex-sm-fill text-sm-center nav-link" href="#">Dashboard</a>
-  {{#if loggedIn}}
-  <a class="flex-sm-fill text-sm-center nav-link" href="#">Logout</a>
-  {{else}}
-  <a class="flex-sm-fill text-sm-center nav-link" href="#">Login</a>
-  {{/if}}
-</nav>
 
-<h1>Let's talk Tech</h1>
-<p>Welcome to Tech Blog, a place top learn and share about technology</p>
-
+        <h1>Let's talk Tech</h1>
+        <p>Welcome to Tech Blog, a place top learn and share about technology</p>
     </header>
 
     <main>
         {{{ body }}}
     </main>
+
     <script src="/public/js/logout.js"></script>
 </body>
+
 </html>
