@@ -1,8 +1,8 @@
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
-    const username = document.querySelector('username-signup').ariaValueMax.trim();
-    const password = document.querySelector('password-signup').ariaValueMax.trim();
+    const username = document.querySelector('#username-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
 
     if (!username || !password) {
         alert('please provide email and password');
