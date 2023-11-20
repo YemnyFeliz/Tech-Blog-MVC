@@ -5,7 +5,7 @@ router.post('/', async (req, res) => {
 
     try {
         if (!req.body.post_text) {
-            return res.status(400).json({ message: "Poss text is required" });
+            return res.status(400).json({ message: "Post text is required" });
         }
 
         const newPost = await Post.create({
