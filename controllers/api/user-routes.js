@@ -19,7 +19,7 @@ router.post('/signup', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   console.log('hello');
-  // try {
+  try {
     const userData = await User.findOne({ 
       where: { 
         username: req.body.username 
@@ -50,9 +50,9 @@ router.post('/login', async (req, res) => {
       res.json(userData);
     });
 
-  // } catch (err) {
-  //   res.status(500).json(err);
-  // }
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.post('/logout', (req, res) => {
@@ -60,8 +60,8 @@ router.post('/logout', (req, res) => {
     req.session.destroy(() => {
       res.status(204).end();
     });
-  // } else {
-  //   res.status(204).end();
+  } else {
+    res.status(204).end();
   }
 });
 
