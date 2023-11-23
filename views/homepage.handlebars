@@ -1,17 +1,21 @@
 <div class="container">
-  {{#each postData}}
+  <!-- Loop through 'postData' and display each post -->
+  {{#each postInfo}}
     <div class="card">
-      <div class="card-header">
-        <h5 class="card-title">{{title}}</h5>
+      <div class=" blog-bg">
+        <!-- Display post title -->
+        <h5 class="card-title text-light">{{title}}</h5>
       </div>
       <div class="card-body">
+        <!-- Provide a link to read the full post -->
         <a href="/post/{{id}}">Read More...</a>
       </div>
       <div class="card-footer">
-        <p class="card-text"><strong>Created by:</strong>
-          {{user.username}}
-          <strong>Created on:</strong>
-          {{format_date createdAt}}</p>
+        <p class="card-text">
+          <!-- Display post creator and creation date -->
+          <strong>Created by:</strong> {{user.username}}
+          <strong>Created on:</strong> {{format_date createdAt}}
+        </p>
       </div>
     </div>
   {{/each}}

@@ -18,7 +18,8 @@ router.post('/signup', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-  try {
+  console.log('hello');
+  // try {
     const userData = await User.findOne({ 
       where: { 
         username: req.body.username 
@@ -28,7 +29,7 @@ router.post('/login', async (req, res) => {
     if (!userData) {
       res
         .status(404)
-        .json({ message: 'Incorrect username or password, please try again' });
+        .json({ message: 'User not found' });
       return;
     }
 
@@ -45,13 +46,13 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.username = userData.username
       req.session.loggedIn = true;
-      
+      console.log(userData);
       res.json(userData);
     });
 
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
 });
 
 router.post('/logout', (req, res) => {

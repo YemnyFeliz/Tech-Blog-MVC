@@ -11,18 +11,27 @@
 </head>
 
 <body>
-    <nav class="nav nav-pills flex-column flex-sm-row">
-        <a class="flex-sm-fill text-sm-center nav-link active" href="/">HOME</a>
-        <a class="flex-sm-fill text-sm-center nav-link" href="/dashboard">Dashboard</a>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+
         {{log loggedIn}}
         {{#if loggedIn}}
-        <a class="flex-sm-fill text-sm-center nav-link" href="/login">Logout</a>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="logout-link">Logout</a>
+        </li>
         {{else}}
-        <a class="flex-sm-fill text-sm-center nav-link" href="#" id="logout-link">Logout</a>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="/login">Login</a>
+        </li>
         {{/if}}
-    </nav>
-    <header>
+    </ul>
 
+    <header>
         <h1>Let's talk Tech</h1>
         <p>Welcome to Tech Blog, a place top learn and share about technology</p>
     </header>
@@ -31,7 +40,7 @@
         {{{ body }}}
     </main>
 
-    <script src="/js/logout.js"></script>
+   <script src="/js/logout.js"></script> 
 </body>
 
 </html>
