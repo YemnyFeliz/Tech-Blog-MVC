@@ -17,7 +17,7 @@ const postHandler = async (event) => {
         // Send a POST request to create a new post
         const response = await fetch("/api/posts", {
           method: "POST",
-          body: JSON.stringify({ title: title, content: body }),
+          body: JSON.stringify({ title: title, post_text: body }),
           headers: { "Content-Type": "application/json" },
         });
   

@@ -2,11 +2,11 @@ const commentHandler = async (event) => {
     event.preventDefault();
   
     // Get the content and post_id from the form
-    const content = document.querySelector("#comment-content").value.trim();
+    const comment_text = document.querySelector("#comment-content").value.trim();
     const post_id = event.target.getAttribute("data-id");
   
     // Check if content is empty
-    if (!content) {
+    if (!comment_text) {
       alert("Please enter a new comment");
       return; // Exit the function if content is empty
     }
@@ -15,7 +15,7 @@ const commentHandler = async (event) => {
       // Send a POST request to create a new comment
       const response = await fetch("/api/comments", {
         method: "POST",
-        body: JSON.stringify({ comment: content, post_id: post_id }),
+        body: JSON.stringify({ comment_text: comment_text, post_id: post_id }),
         headers: { "Content-Type": "application/json" },
       });
   
