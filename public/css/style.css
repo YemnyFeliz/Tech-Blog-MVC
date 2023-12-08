@@ -1,88 +1,123 @@
 *{
-    /* margin: 0;
-    padding: 0; */
+    margin: 0;
+    padding: 0;
     /* padding-bottom: 2%; */
-    /* scroll-behavior: smooth;
-    height: auto; */
+    scroll-behavior: smooth;
+    height: auto;
 }
 body {
     height: auto;
+    background-color: #d8f3dc;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
 }
 * {box-sizing: border-box}
 
-/* Full-width input fields */
-  input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
+/* ------------------HOME------------------------ */
+header {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  font-style: oblique;
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 50%;
-  opacity: 0.9;
-}
-
-button:hover {
-  opacity:1;
-}
-.w-50{
-    display: block;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
-
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-}
-
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
 }
 
 h1 {
+  text-transform: uppercase;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 44px;
   text-align: center;
 }
+
+.headerP {
+  font-size: 26px;
+}
+/* ------------------NAV------------------------ */
+.navbar-light .navbar-nav .nav-link {
+  font-size: 22px;
+  font-weight: bold;
+  color: #d8f3dc;
+}
+
+
+/* -------------------HOME POSTS----------------------- */
+.card {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 2%;
+}
+
+.card-header {
+  background-color: #40916c;
+  font-size: 22px;
+}
+
+.card-body {
+  font-size: 18px;
+}
+
+.card-footer {
+  background-color: #e9ecef ;
+}
+
+.card-header-comment {
+  background-color: #6c757d;
+}
+
+.card-header-lc {
+  background-color: #ced4da ;
+}
+
 p {
   text-align: center;
 }
+
+/* -------------------DASHBOARD----------------------- */
+#btn-create {
+  display: flex;
+  margin: auto;
+  margin-bottom: 2rem;
+  font-size: 24px;
+}
+
+#update-link, #delete-link {
+  font-size: 18px;
+  margin-right: 2rem;
+}
+
+#delete-link {
+  color: rgb(203, 24, 24);
+}
+
+.btn {
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+
+#comment-content {
+  height: 200px;
+
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* -------------------Login/SignUp----------------------- */
+form {
+  margin: 2rem;
+  font-size: 18px;
+}
+
+.form-control {
+  border: 2px solid darkgrey;
+}
+
+
+
 /* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
+/* @media screen and (max-width: 300px) {
   .cancelbtn, .signupbtn {
     width: 100%;
   }
-}
+} */

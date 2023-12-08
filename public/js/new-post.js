@@ -1,3 +1,8 @@
+function showCreateForm() {
+  document.getElementById('createNew').style.display ="block";
+}
+
+
 // Function to handle the post creation
 const postHandler = async (event) => {
     event.preventDefault();

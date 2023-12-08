@@ -1,57 +1,53 @@
-<div class="container my-4">
-  <div class="card">
-    <div class="card-header">
-      <h3 class="card-title text-center">{{post.title}}</h3>
-    </div>
-    <div class="card-body">
-      <p class="card-text">{{post.post_text}}</p>
-    </div>
-    <div class="card-footer">
-      <p><strong>Created by: </strong>{{post.user.username}}
-        <strong>Created on: </strong>{{format_date post.createdAt}}</p>
-    </div>
+
+<div class="card text-center">
+  <div class="card-header">
+    {{post.title}}
+  </div>
+  <div class="card-body">
+    <!-- Link to post -->
+    <p class="card-text">{{post.post_text}}</p>
+  </div>
+  <div class="card-footer text-muted">
+    <p class="card-text">
+      <!-- Display post creator and creation date -->
+      <strong>Created by:</strong> {{post.user.username}}
+      <strong>Created on:</strong> {{format_date post.createdAt}}
+    </p>
   </div>
 </div>
 
-<div class="container my-4">
-  <h3 class="text-center">Comments</h3>
-  <div class="row d-flex justify-content-between align-items-stretch">
 
-    <!-- Comments Column -->
-    <div class="col-md-6">
+  <h3 class="text-center">Comments</h3>
+ 
+    <!-- Comments -->
+   
       {{#each post.comments}}
-        <div class="card mb-4 comment-card">
-          <div class="card-header">
-            <h3 class="card-title">{{this.user.username}}</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-text">{{this.comment_text}}</p>
-          </div>
-          <div class="card-footer">
-            <p><strong>Created on: </strong>{{format_date createdAt}}</p>
-          </div>
+      <div class="card text-center">
+        <div class="card-header">
+          {{this.user.username}}
         </div>
+        <div class="card-body">
+          <p class="card-text">{{this.comment_text}}</p>
+        </div>
+        <div class="card-footer">
+          <p><strong>Created on: </strong>{{format_date createdAt}}</p>
+        </div>
+      </div>
+
+
+
       {{/each}}
     </div>
 
     <!-- Comment Form Column -->
-    <div class="col-md-6">
-      <div class="card mb-4">
-        <div class="card-header">
-          <h3>Leave your comment here</h3>
+    {{!-- <div class="col-md-6"> --}}
+      <div class="card text-center">
+        <div class="card-header-lc">
+          <h4>Leave your comment here</h3>
         </div>
         <div class="card-body">
-          <textarea
-            id="comment-content"
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="2"
-          ></textarea>
-          <button
-            class="btn btn-primary mt-4"
-            data-id="{{post.id}}"
-            id="submit-comment"
-          >Submit</button>
+          <textarea id="comment-content" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+          <button class="btn btn-dark mt-4" data-id="{{post.id}}" id="submit-comment">Submit</button>
         </div>
       </div>
     </div>

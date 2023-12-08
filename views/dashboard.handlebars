@@ -1,48 +1,50 @@
-<div class="container my-4">
-  <!-- Loop through 'posts' array and display each post -->
-  {{#each posts}}
+<!-- Loop through posts -->
+{{#each posts}}
     {{log posts}}
-    <div class="card">
-      <!-- Card header with post title and edit link -->
-      <div class="card-header blog-bg text-light  d-flex justify-content-between">
-        <h3 class="card-title text-center">{{title}}</h3>
-        <a href="/dashboard/post/{{id}}"><i class="fa-solid fa-pen-to-square"></i></a>
-      </div>
-      <div class="card-body">
-        <!-- Post content -->
-        <p class="card-text">{{post_text}}</p>
-      </div>
-      <div class="card-footer">
-        <!-- Display post creator and creation date -->
-        <p><strong>Created by: </strong>{{user.username}} <strong>Created on: </strong>{{format_date createdAt}}</p>
-      </div>
-    </div>
-  {{/each}}
+<div class="card text-center">
+  <div class="card-header">
+    {{title}}
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{post_text}}</p>
+    <a href="/dashboard/post/{{id}}">options</a>
+  </div>
+  <div class="card-footer text-muted">
+    <p class="card-text">
+          <!-- Display post creator and creation date -->
+          <strong>Created by:</strong> {{user.username}}
+          <strong>Created on:</strong> {{format_date createdAt}}
+        </p>
+  </div>
 </div>
+{{/each}}
+
+<button type="button" class="btn btn-dark" id="btn-create" onclick="showCreateForm()">+ Add new Post</button>
 
 <!-- Form for creating a new post -->
-<form class="container new-post">
+
+<form class=" new-post" style="display:none" id="createNew">
   <div class="card">
     <div class="card-header blog-bg text-light">
-      <!-- Form title -->
       <h2 class="card-title text-center">Create a new post</h2>
     </div>
+
     <div class="form-group px-3">
       <label for="post-title">Post Title:</label>
-      <!-- Input field for post title -->
       <input type="text" class="form-control" id="post-title" placeholder="Enter post title" />
     </div>
+
     <div class="form-group px-3">
       <label for="post-body">Post:</label>
-      <!-- Textarea for post content -->
       <textarea type="text" class="form-control" id="post-body" placeholder="Enter new post"></textarea>
     </div>
   </div>
+
   <div class="text-center">
-    <!-- Submit button for creating a new post -->
-    <button type="submit" class="blog-bg text-light btn btn-primary w-50">Submit</button>
+    <button type="submit" class="btn btn-dark">Submit</button>
   </div>
 </form>
+
 
 <!-- Include JavaScript for handling new post submission -->
 <script src="/js/new-post.js"></script>
