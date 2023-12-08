@@ -3,15 +3,15 @@ const upLink = document.getElementById("update-link");
 
 const updatePost = async (event) => {
   const title = document.getElementById("edit-title").value;
-  const content = document.getElementById("edit-content").value;
+  const post_text = document.getElementById("edit-content").value;
   const id = event.target.getAttribute("data-id");
-  console.log(title, content, id, "from edit.js");
+  console.log(title, post_text, id, "from edit.js");
 
   const response = await fetch(`/api/posts/${id}`, {
     method: "PUT",
     body: JSON.stringify({
       title: title,
-      content: content,
+      post_text: post_text,
     }),
     headers: { "Content-Type": "application/json" },
   });
