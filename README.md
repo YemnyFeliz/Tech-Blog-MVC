@@ -19,8 +19,8 @@
   - Users are able to sign-up and login to create, update, and delete posts, and keve comments.
   - Once users are signed in a logout link appears instead of the login so they can end their session if they wish.
 
-  - [ Deployed Website ]()
-  - [ Video link](https://drive.google.com/file/d/1AKkGT7Yh5xzplMMJqgTtfwYmNdO8SThJ/view)
+  - [ Deployed Website ](https://techblog-yf-0ce34b9af3ec.herokuapp.com/)
+ 
 
   ## Installation
   - git clone https://github.com/YemnyFeliz/Tech-Blog-MVC.git
